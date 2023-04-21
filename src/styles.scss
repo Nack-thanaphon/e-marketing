@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url("https://fonts.googleapis.com/css2?family=Anuphan:wght@500&display=swap");
+
+$primary: #673AB7;
+$secound: #000000;
+
+* {
+  font-family: "Anuphan", sans-serif;
+  //   height: 100vh;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.c-primary {
+  color: $primary !important;
+}
+
+.c-secound {
+  color: $secound !important;
+}
