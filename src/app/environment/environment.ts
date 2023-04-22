@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://marketing.e-swc.com/api',
+  apiUrl: 'https://marketing.e-swc.com/api',
 };
