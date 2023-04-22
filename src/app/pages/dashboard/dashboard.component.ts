@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -29,6 +28,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
+  percentage: number = 90;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 }
