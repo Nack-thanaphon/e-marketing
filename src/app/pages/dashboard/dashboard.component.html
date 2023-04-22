@@ -73,9 +73,21 @@
       <div class="col-sm-12 col-12 m-0 p-0">
         <div class="shadow-sm rounded-sm m-1 p-2 mb-1">
           <h4 class="m-0 p-0 pb-1 text-primary">ค่าโฆษณา</h4>
-          <small>ข้อมูลล่าสุด : 30 เมษายน 2565</small>
-          <hr class="m-0 p-0 my-2 text-muted" />
-          <h3>35.k / บาท</h3>
+          <ng-container *ngIf="data && data.length > 0; else noData">
+            <div *ngFor="let item of data">
+              <small
+                >ข้อมูลล่าสุด :
+                {{
+                  item.created_at | date : "d MMMM YYYY" | slice : 0 : 11
+                }}</small
+              >
+              <hr class="m-0 p-0 my-2 text-muted" />
+              <h3>{{ item.price | currency : "THB" }} / บาท</h3>
+            </div>
+          </ng-container>
+          <ng-template #noData>
+            <p>ไม่พบข้อมูล</p>
+          </ng-template>
         </div>
       </div>
     </div>

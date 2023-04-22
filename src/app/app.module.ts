@@ -14,6 +14,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { DatePipe } from '@angular/common';
+
 import { AppComponent } from './app.component';
 import { FrontLayoutComponent } from './layout/front-layout/front-layout.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -22,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,8 +51,9 @@ import { DatepickerComponent } from './components/datepicker/datepicker.componen
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    FormsModule
-
+    FormsModule,
+    HttpClientModule,
+    DatePipe
   ],
   providers: [],
   bootstrap: [AppComponent],
