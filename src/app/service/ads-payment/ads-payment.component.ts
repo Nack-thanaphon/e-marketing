@@ -12,10 +12,9 @@ export class AdsPaymentApi {
   constructor(private http: HttpClient) {}
 
   getSomeData() {
-    const headers = new HttpHeaders().set(
-      'Authorization',
-      `Bearer ${this.token}`
-    );
+    const headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${this.token}`)
+      .set('Access-Control-Allow-Origin', '*');
     return this.http.get(`${this.apiUrl}/paymentTotal`, { headers });
   }
 }
