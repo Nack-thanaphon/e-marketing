@@ -16,7 +16,7 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<any[]> {
-    // if (!this.products$) {
+    if (!this.products$) {
       this.products$ = this.fetchProducts().pipe(
         shareReplay(1),
         catchError((error) => {
@@ -24,11 +24,10 @@ export class ProductService {
           return of([]);
         })
       );
-    // }
+    }
     // console.log('products$:', this.products$);
     return this.products$;
   }
-  
 
   private fetchProducts(): Observable<any[]> {
     const headers = new HttpHeaders()
