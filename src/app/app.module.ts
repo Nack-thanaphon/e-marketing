@@ -23,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ProductComponent } from './pages/product/product.component';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -34,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomeComponent,
     DashboardComponent,
+    ProductComponent,
     DatepickerComponent,
   ],
   imports: [

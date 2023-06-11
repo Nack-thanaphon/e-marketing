@@ -1,0 +1,18 @@
+<div *ngIf="products">
+  <h2>Products:</h2>
+  <div class="row m-0 p-0">
+    <div class="col-6" *ngFor="let product of products">
+      <div class="card p-2 m-2">
+        <div class="pb-2">
+          <p class="m-0 p-0">{{ product.title }}</p>
+          <small>{{ product.type }}</small>
+        </div>
+
+        <img [src]="apiUrl + product.image" alt="" class="w-100" />
+        <div class="py-2">
+          <p class="m-0 p-0 fw-bold">{{ product.price | currency : "THB" }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
