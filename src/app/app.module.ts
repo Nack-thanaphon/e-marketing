@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
@@ -59,8 +60,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     DatePipe
   ],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+
   exports: [DiscountComponent],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
