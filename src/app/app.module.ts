@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { FrontLayoutComponent } from './layout/front-layout/front-layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DiscountComponent } from './components/discount/discount.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     FrontLayoutComponent,
     HeaderComponent,
     FooterComponent,
+    DiscountComponent,
     HomeComponent,
     DashboardComponent,
     ProductComponent,
@@ -57,6 +59,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     DatePipe
   ],
+  exports: [DiscountComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

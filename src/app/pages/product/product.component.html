@@ -7,10 +7,10 @@
           <p class="m-0 p-0">{{ product.title }}</p>
           <small>{{ product.type }}</small>
         </div>
-
         <img [src]="apiUrl + product.image" alt="" class="w-100" />
         <div class="py-2">
           <p class="m-0 p-0 fw-bold">{{ product.price | currency : "THB" }}</p>
+          <app-discount [productId]="5"></app-discount>
         </div>
       </div>
     </div>

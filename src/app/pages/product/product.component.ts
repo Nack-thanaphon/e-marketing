@@ -9,9 +9,10 @@ import { environment } from '../../../app/environment/environment';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
+  productId!: number ; // Replace with your actual product ID
   public products: any;
   public apiUrl = environment.imgUrl;
-
+  
   constructor(private apiService: ProductService) { }
 
   ngOnInit() {
