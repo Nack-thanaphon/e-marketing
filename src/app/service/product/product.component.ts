@@ -32,9 +32,7 @@ export class ProductService {
   }
 
   private fetchProducts(): Observable<any[]> {
-    const headers = new HttpHeaders()
-      .set('Authorization', `Bearer ${this.token}`)
-      .set('Access-Control-Allow-Origin', '*');
-    return this.http.get<any[]>(`${this.apiUrl}/products`, { headers });
+ 
+    return this.http.get<any[]>(`${this.apiUrl}/products`);
   }
 }
