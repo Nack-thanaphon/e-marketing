@@ -1,10 +1,13 @@
-# Stage 1: Build the Angular application
-FROM node:14 as build
+# Build stage
+FROM node:14.20-alpine as build-stage
 WORKDIR /app
-COPY . .
+COPY package*.json /app/
 RUN npm install
-RUN npm run build -- --prod
+COPY ./ /app/
+ARG configuration=production
+RUN npm run build -- --output-path=./dist/out --configuration $configuration
 
-# Stage 2: Serve the built application with Nginx
-FROM nginx:latest
-COPY --from=build /app/dist /usr/share/nginx/html
+# Production stage
+FROM nginx:1.15
+COPY --from=build-stage /app/dist/out/ /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
